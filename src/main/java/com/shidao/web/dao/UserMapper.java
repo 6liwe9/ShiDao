@@ -3,6 +3,7 @@ package com.shidao.web.dao;
 import com.shidao.web.model.User;
 import com.shidao.web.model.UserExample;
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {

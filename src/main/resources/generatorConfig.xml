@@ -18,7 +18,7 @@
 		</javaModelGenerator>
 
 		<!-- 生成mapper xml文件 -->
-		<sqlMapGenerator targetPackage="mybatis.mapper.config"
+		<sqlMapGenerator targetPackage="mybatis.mapper"
 			targetProject="F:\User\shidao\src\main\resources">
 			<property name="enableSubPackages" value="true" />
 		</sqlMapGenerator>

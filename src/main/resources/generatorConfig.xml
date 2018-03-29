@@ -4,10 +4,10 @@
 <generatorConfiguration>
 	<classPathEntry location="D:\mysql-connector-java-5.1.45.jar" />
 	<context id="context1">
-		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost/test" userId="root" password="root">
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost/eat_phil" userId="root" password="root">
 	</jdbcConnection>
 		<javaTypeResolver>
-			<property name="forceBigDecimals" value="false" />
+			<property name="forceBigDecimals" value="true" />
 		</javaTypeResolver>
 
 		<!-- 生成model类 -->
@@ -27,6 +27,19 @@
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 
-		<table tableName="testUser" domainObjectName="User"></table>
+		<table tableName="t_dict_type" domainObjectName="DictType"></table>
+		<table tableName="t_dict_item" domainObjectName="DictItem"></table>
+		<table tableName="t_user" domainObjectName="User"></table>
+		<table tableName="t_restaurant" domainObjectName="Restaurant"></table>
+		<table tableName="t_food" domainObjectName="Food"></table>
+		<table tableName="t_order" domainObjectName="Order"></table>
+		<table tableName="t_order_detil" domainObjectName="OrderDetil"></table>
+		<table tableName="t_expor" domainObjectName="Expor"></table>
+		<table tableName="t_order_dispatch" domainObjectName="OrderDispatch"></table>
+		<table tableName="t_res_eva" domainObjectName="ResEva"></table>
+		<table tableName="t_food_eva" domainObjectName="FoodEva"></table>
+		<table tableName="t_expor_eva" domainObjectName="ExporEva"></table>
+		<table tableName="t_coupon" domainObjectName="Coupon"></table>
+		<table tableName="t_user_coupon" domainObjectName="UserCoupon"></table>
 	</context>
 </generatorConfiguration>  

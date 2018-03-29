@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.shidao.web</groupId>
-	<artifactId>shidao</artifactId>
+	<artifactId>eatphil</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>shidao</name>
+	<name>eatphil</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>

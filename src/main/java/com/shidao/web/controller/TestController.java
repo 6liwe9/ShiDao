@@ -25,7 +25,6 @@ public class TestController {
     @GetMapping("/helloworld")
     public Map helloworld() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
     	DictType dt=dict.selectByPrimaryKey(1);
-    	return BeanUtils.describe(dt);
-       
+    	return BeanUtils.describe(dt);  
     }
 }

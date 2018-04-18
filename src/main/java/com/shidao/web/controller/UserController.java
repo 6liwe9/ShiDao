@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.shidao.web.dao.DictTypeMapper;
 import com.shidao.web.model.DictType;
+import com.shidao.web.service.UserService;
 
 /*
  * 用户管理
@@ -25,7 +26,10 @@ import com.shidao.web.model.DictType;
 @RequestMapping("/user")
 public class UserController {
 	@Autowired
+	UserService service;
+	@Autowired
 	DictTypeMapper dict;
+	@RequestMapping("/user")
     public Map helloworld() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
     	DictType dt=dict.selectByPrimaryKey(1);
     	return BeanUtils.describe(dt);  

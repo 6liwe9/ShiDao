@@ -15,8 +15,3 @@ biz 业务层
 dao 数据层
 数据库访问的，用mybatis 自动生成的
 model 数据模型
-<<<<<<< HEAD
-定义了数据对象
-=======
-定义了数据对象
->>>>>>> refs/remotes/origin/master

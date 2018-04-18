@@ -49,7 +49,11 @@ public class UserController {
 	public Result logIn(UserVO userVo) throws IllegalAccessException, InvocationTargetException  {
     	User user=new User();
     	BeanUtils.copyProperties(user, userVo);
-    	return Result.buildSuccessReslut(service.loginUser(user));  
+    	long id=service.loginUser(user);
+    	if(id==-1l){
+    		return Result.buildFailReslut("用户名或密码错误");
+    	}
+    	return Result.buildSuccessReslut(id);  
     }
 	
 }

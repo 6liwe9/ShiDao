@@ -27,6 +27,7 @@ public class UserService {
 	 * @param user
 	 */
 	public void addUser(User user) {
+		Long id=System.currentTimeMillis();
 		userMapper.insert(user);
 	}
 	/**
@@ -45,7 +46,23 @@ public class UserService {
 		if(user.getuName()!=null) {
 			criteria.andUNameEqualTo(user.getuName());
 		}
+		if(user.getuPassword()!=null) {
+			criteria.andUPasswordEqualTo(user.getuPassword());
+		}
 		return userMapper.selectByExample(userExample);
+		
+	}
+	/**
+	 * @param user
+	 * 登录，判断用户存不存在
+	 * @return 返回用户id
+	 */
+	public Long loginUser(User user) {
+		List<User> users= searchUser(user);
+		if(users.size()!=1)
+			return -1l;
+		else
+			return users.get(0).getuId();
 		
 	}
 	/**

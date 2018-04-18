@@ -15,3 +15,4 @@ biz 业务层
 dao 数据层
 数据库访问的，用mybatis 自动生成的
 model 数据模型
+VO 这层 是为了和前台或者移动端交互的 目前对象属性是和model里的对象一致的，例如 UserVo 和User 其实代码一样。主要是为了解决 以后可能 与前台交互对象和 数据库对象 属性不一致或者 有可能long值 在html中显示不全的问题，如果有这个问题 要在vo里把 long的属性 改成string 返给用户。 两个对象 用BeanUtils。copyProperites方法转换就行

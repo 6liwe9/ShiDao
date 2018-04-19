@@ -11,6 +11,7 @@ import org.apache.commons.beanutils.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,14 +33,14 @@ public class UserController {
 	@Autowired
 	UserService service;
 	@RequestMapping(value="/registeUser",method= RequestMethod.POST)
-    public Result registerUser(UserVO userVo) throws IllegalAccessException, InvocationTargetException  {
+    public Result registerUser(@RequestBody UserVO userVo) throws IllegalAccessException, InvocationTargetException  {
     	User user=new User();
     	BeanUtils.copyProperties(user, userVo);
 		service.addUser(user);
     	return Result.buildSuccessReslut(null);  
     }
 	@RequestMapping(value="/updateUser",method= RequestMethod.POST)
-	public Result updateUser(UserVO userVo) throws IllegalAccessException, InvocationTargetException  {
+	public Result updateUser(@RequestBody UserVO userVo) throws IllegalAccessException, InvocationTargetException  {
     	User user=new User();
     	BeanUtils.copyProperties(user, userVo);
 		service.updateUserById(user);

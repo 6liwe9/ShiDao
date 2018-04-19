@@ -28,6 +28,7 @@ public class UserService {
 	 */
 	public void addUser(User user) {
 		Long id=System.currentTimeMillis();
+		user.setuId(id);
 		userMapper.insert(user);
 	}
 	/**

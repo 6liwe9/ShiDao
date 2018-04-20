@@ -4,26 +4,28 @@
 <generatorConfiguration>
 	<classPathEntry location="D:\mysql-connector-java-5.1.45.jar" />
 	<context id="context1">
-		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost/eat_phil" userId="root" password="root">
-	</jdbcConnection>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://114.116.9.92/eat_phil" userId="mysql"
+			password="123456">
+		</jdbcConnection>
 		<javaTypeResolver>
 			<property name="forceBigDecimals" value="true" />
 		</javaTypeResolver>
 
 		<!-- 生成model类 -->
 		<javaModelGenerator targetPackage="com.shidao.web.model"
-			targetProject="F:\User\shidao\src\main\java\">
+			targetProject="D:\ShiDao\src\main\java\">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
 
 		<!-- 生成mapper xml文件 -->
 		<sqlMapGenerator targetPackage="mybatis.mapper"
-			targetProject="F:\User\shidao\src\main\resources">
+			targetProject="D:\ShiDao\src\main\resources">
 			<property name="enableSubPackages" value="true" />
 		</sqlMapGenerator>
 		<javaClientGenerator type="XMLMAPPER"
-			targetPackage="com.shidao.web.dao" targetProject="F:\User\shidao\src\main\java\">
+			targetPackage="com.shidao.web.dao" targetProject="D:\ShiDao\src\main\java\">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 
@@ -41,5 +43,11 @@
 		<table tableName="t_expor_eva" domainObjectName="ExporEva"></table>
 		<table tableName="t_coupon" domainObjectName="Coupon"></table>
 		<table tableName="t_user_coupon" domainObjectName="UserCoupon"></table>
+		<table tableName="t_back_user" domainObjectName="BackUser"></table>
+		<table tableName="t_res_user" domainObjectName="ResUser"></table>
+		<table tableName="t_exp_user" domainObjectName="ExpUser"></table>
+		<table tableName="t_res_user_rel" domainObjectName="ResUserRel"></table>
+		<table tableName="t_exp_user_rel" domainObjectName="ExpUserRel"></table>
+		<table tableName="t_user_address" domainObjectName="UserAddress"></table>
 	</context>
 </generatorConfiguration>  

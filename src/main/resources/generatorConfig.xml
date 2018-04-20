@@ -5,7 +5,7 @@
 	<classPathEntry location="D:\mysql-connector-java-5.1.45.jar" />
 	<context id="context1">
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://114.116.9.92/eat_phil" userId="mysql"
+			connectionURL="jdbc:mysql://114.116.9.92/eat_phil_debug" userId="mysql"
 			password="123456">
 		</jdbcConnection>
 		<javaTypeResolver>

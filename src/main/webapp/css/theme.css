@@ -1,0 +1,374 @@
+/*格式化*/
+*{
+	padding: 0px;margin: 0px;
+}
+li{
+	list-style: none;
+}
+.clearfix:after { 
+content: ".";
+display: block;
+clear: both;
+visibility: hidden;
+line-height: 0;
+height: 0;
+font-size:0;
+} 
+/*统一*/
+a {
+    text-decoration: none;
+    color: #ed5b3d;
+}
+.mui-bar-tab .mui-tab-item.mui-active {
+    color: #ed5b3d;
+}
+.content-with-footer{
+	margin-bottom: 50px;
+}
+.row-margin-bottom{margin-bottom: 20px;}
+.footer{
+	bottom: 0;
+    display: table;
+    height: 50px;
+    padding: 0;
+    position: fixed;
+    width: 100%;
+}
+.mui-left,.mui-right{width: 50%;float: left;}
+.mui-right{text-align: right;}
+.mui-right>a{width: 51%;margin-top: 3px;}
+.mui-table-view .mui-media-object {
+    line-height: 42px;
+    max-width: 70px;
+    height: 70px;
+}
+.text-orange{
+	color: #ed5b3d;
+}
+.content-with-footer{
+	margin-bottom: 50px;
+}
+.row-margin-bottom{margin-bottom: 20px;}
+.footer{
+	bottom: 0;
+    display: table;
+    height: 50px;
+    padding: 0;
+    position: fixed;
+    width: 100%;
+}
+.mui-btn-orange{
+	background: #ff6141;
+	color: #fff;
+	border: 1px solid #ff6141;
+	padding: 10px 15px;
+}
+.mui-btn-orange:hover{
+	background: #ed5b3d;
+	color: #fff;
+	border: 1px solid #ed5b3d;
+}
+.search-badge {
+    padding: 8px 30px;
+    font-size: 14px;
+}
+.mui-yzm-row{
+	position: relative;
+}
+.mui-yzm-row .mui-btn{
+	position: absolute;
+    width: auto;
+    right: 10px;
+    top: 1px;
+}
+.mui-input-row{
+	margin-bottom: 10px;
+}
+.mui-input-group label,.mui-input-row label {
+	width: 33%;
+}
+.mui-input-row label~input,
+.mui-input-row label~select,
+.mui-input-row label~textarea {
+	width: 67%;
+	background: #fff;
+}
+/*星星评价*/
+.rate-star .mui-icon-star{color: #ed5b3d;font-size: 18px;}  
+.rate-star .mui-icon-star-filled{color: #ed5b3d;font-size: 18px;}   
+/*登录*/
+.mui-bar .mui-btn-default {
+    font-weight: 400;
+    position: relative;
+    z-index: 20;
+    top: 0px;
+    margin-top: 0;
+    padding: 5px 12px 6px;
+}
+.text-orange{
+	color: #ed5b3d;
+}
+.mui-btn-orange{
+	background: #ff6141;
+	color: #fff;
+	border: 1px solid #ff6141;
+}
+.mui-btn-orange:hover{
+	background: #ed5b3d;
+	color: #fff;
+	border: 1px solid #ed5b3d;
+}
+.link-area a{
+	color: #555;
+}
+.area {
+	margin: 20px auto 0px auto;
+}
+
+.mui-input-group {
+	margin-top: 10px;
+}
+
+.mui-input-group:first-child {
+	margin-top: 20px;
+}
+
+.mui-input-group label {
+	width: 35%;
+}
+
+.mui-input-row label~input,
+.mui-input-row label~select,
+.mui-input-row label~textarea {
+	width: 65%;
+	padding: 10px 0px;
+    text-align: left;
+}
+
+.mui-checkbox input[type=checkbox],
+.mui-radio input[type=radio] {
+	top: 6px;
+}
+
+.mui-content-padded {
+	margin-top: 25px;
+}
+
+.mui-btn {
+	padding: 10px;
+}
+
+.link-area {
+	display: block;
+	margin-top: 25px;
+	text-align: center;
+}
+
+.spliter {
+	color: #bbb;
+	padding: 0px 8px;
+}
+
+.oauth-area {
+	position: absolute;
+	bottom: 20px;
+	left: 0px;
+	text-align: center;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+.oauth-area .oauth-btn {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	background-size: 30px 30px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	margin: 0px 20px;
+	/*-webkit-filter: grayscale(100%); */
+	border: solid 1px #ddd;
+	border-radius: 25px;
+}
+
+.oauth-area .oauth-btn:active {
+	border: solid 1px #aaa;
+}
+
+.oauth-area .oauth-btn.disabled {
+	background-color: #ddd;
+}
+.quick-login-item{
+	display: inline-block;
+	text-align: center;
+	margin-right: 20px;
+}
+.quick-login-item:last-child{
+	margin-right: 0px;
+}
+.quick-login-item img{
+	height: 60px;
+	display: block;
+	margin: 30px auto 10px;
+}
+.quick-login-item span{
+	padding-top: 10px;
+	color: #555;
+}
+/*.login-bg{
+	position: absolute;
+    width: 100%;
+    background: url(../images/login-bg.png) no-repeat;
+    height: 100%;
+    background-size: cover;
+}*/
+/*店家信息*/
+.djxx-wrapper .mui-table-view .mui-media-object {
+    line-height: 42px;
+    max-width: 65px;
+    height: 65px;
+}
+.djxx-wrapper .mui-content{padding: 45px 0px 50px;}
+/*主页面*/
+.main-wrapper .mui-table-view .mui-media-object {
+    line-height: 42px;
+    max-width: 65px;
+    height: 65px;
+}
+.main-wrapper .title{  
+	margin: 20px 15px 10px;  
+	color: #6d6d72;  
+	font-size: 15px;  
+}  
+.main-wrapper .oa-contact-cell.mui-table .mui-table-cell {  
+	padding: 11px 0;  
+	vertical-align: middle;  
+}  
+.main-wrapper .oa-contact-cell {  
+	position: relative;  
+	margin: -11px 0;  
+}  
+.main-wrapper .oa-contact-avatar {  
+	width: 75px;  
+}  
+.main-wrapper .oa-contact-avatar img {  
+	border-radius: 50%;  
+}  
+.main-wrapper .oa-contact-content {  
+	width: 100%;  
+}  
+.main-wrapper .oa-contact-name {  
+	margin-right: 20px;  
+}  
+.main-wrapper .oa-contact-name, oa-contact-position {  
+	float: left;  
+}  
+.main-wrapper .sort-list img{height: 60px;width: 70px;}
+.main-wrapper .sort-list li.mui-table-view-cell{
+	background: #fff;
+	padding: 0px 15px 5px;	
+}
+.main-wrapper .sort-list li.mui-table-view-cell:active{
+	background: #fff;
+}
+.main-wrapper .sort-list{
+	margin: 5px 0px;
+	border-top: 1px solid #eee;
+}
+.main-operate{
+	background: #fff;
+	margin: 5px 0px;
+}
+.jian-sign{
+	color: #fff;
+    background: #ff0000;
+    padding: 1px 4px 2px;
+    margin-right: 10px;
+}
+.activity-list ul li{position: relative;}
+.activity-list .activity-num{
+	position: absolute;
+	background: rgba(0,0,0,0.5);
+	color: #fff;
+	top: 10px;
+	right: 0px;
+	padding: 2px 6px;
+}
+.personal-header{
+	text-align: center;
+}
+.personal-header .personal-icon{
+	height: 100px;
+	width: 100px;
+	display: block;
+	margin: 10px auto;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.personal-header .personal-icon img{
+	width: 100%;
+	height: 100%;
+}
+.personal-header .personal-title{font-size: 18px;}
+/*食物详情*/
+.good-detail,.rate-detail{
+	background: #fff;
+	margin: 5px 0px;
+	padding: 10px;
+}
+.good-detail .cookie-title,.rate-detail .cookie-title{
+	margin: 5px 0px;
+}
+.rate-detail .rate-text{white-space: initial;}
+.swxq-wrapper .mui-content{
+	padding-bottom: 50px;
+}
+.search-badge{padding: 8px 30px;font-size: 14px;}
+/*养胃专区*/
+.ywzq-wrapper .mui-content{
+	padding-bottom: 50px;
+}
+.mui-row.mui-fullscreen>[class*="mui-col-"] {
+	height: 100%;
+}
+
+.mui-col-xs-3,
+.mui-col-xs-9 {
+	overflow-y: auto;
+	height: 100%;
+}
+
+.mui-segmented-control .mui-control-item {
+	line-height: 50px;
+	width: 100%;
+}
+
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+	background-color: #fff;
+}
+/*意见反馈*/
+.yjfk-pic{
+	margin-bottom: 15px;
+}
+.yjfk-pic ul li{
+	background: #fff;
+	height: 100px;
+	width: 100px;
+	border: 1px solid #dbdbdb;
+	text-align: center;
+	padding-top: 35px;
+	float: left;
+	margin-right: 10px;
+	cursor: pointer;
+}
+/*交易中*/
+.jyz-wrapper a label{margin-right: 25px;}
+/*购物车*/
+.buy-car-content{
+	position: fixed;
+    width: 100%;
+    bottom: 50px;
+    display: none;
+}
+

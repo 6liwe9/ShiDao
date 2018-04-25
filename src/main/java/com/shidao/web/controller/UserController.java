@@ -20,7 +20,9 @@ import com.shidao.web.commons.Result;
 import com.shidao.web.dao.DictTypeMapper;
 import com.shidao.web.model.DictType;
 import com.shidao.web.model.User;
+import com.shidao.web.model.UserAddress;
 import com.shidao.web.service.UserService;
+import com.shidao.web.vo.UserAddressVO;
 import com.shidao.web.vo.UserVO;
 
 /*
@@ -46,7 +48,7 @@ public class UserController {
 		service.updateUserById(user);
     	return Result.buildSuccessReslut(null);  
     }
-	@RequestMapping(value="/login",method= RequestMethod.GET)
+	@RequestMapping(value="/login",method= RequestMethod.POST)
 	public Result logIn(UserVO userVo) throws IllegalAccessException, InvocationTargetException  {
     	User user=new User();
     	BeanUtils.copyProperties(user, userVo);
@@ -56,5 +58,13 @@ public class UserController {
     	}
     	return Result.buildSuccessReslut(id);  
     }
-	
+	@RequestMapping(value="/updateAddress",method= RequestMethod.GET)
+	public Result updateAddress(UserAddressVO addressVo) throws IllegalAccessException, InvocationTargetException  {
+    	UserAddress address=new UserAddress();
+    	BeanUtils.copyProperties(address, addressVo);
+    	service.updateAddress(address);
+    	
+    		return Result.buildSuccessReslut(null);
+    
+    }
 }

@@ -5,8 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.shidao.web.dao.UserAddressMapper;
 import com.shidao.web.dao.UserMapper;
 import com.shidao.web.model.User;
+import com.shidao.web.model.UserAddress;
 import com.shidao.web.model.UserExample;
 import com.shidao.web.model.UserExample.Criteria;
 
@@ -22,6 +24,8 @@ import com.shidao.web.model.UserExample.Criteria;
 public class UserService {
 	@Autowired
 	UserMapper userMapper;
+	@Autowired
+	UserAddressMapper addressMapper;
 	/**
 	 * 新增用户
 	 * @param user
@@ -64,6 +68,9 @@ public class UserService {
 			return -1l;
 		else
 			return users.get(0).getuId();
+		
+	}
+	public void updateAddress(UserAddress address) {
 		
 	}
 	/**

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/theme.css" />
+	</head>
+	<body>
+		<div class="main-wrapper">
+			<header class="mui-bar mui-bar-nav">
+				<h1 class="mui-title">首页</h1>  
+			</header>  
+			<!--触发符：mtab-->  
+			<nav class="mui-bar mui-bar-tab">  
+				<a class="mui-tab-item mui-active" href="#tabbar">  
+					<span class="mui-icon mui-icon-home"></span>  
+					<span class="mui-tab-label">首页</span>  
+				</a>  
+				<a class="mui-tab-item" href="#tabbar-with-activity">  
+					<span class="mui-icon mui-icon-star"><span class="mui-badge">9</span></span>  
+					<span class="mui-tab-label">活动</span>  
+				</a>  
+				<a class="mui-tab-item" href="#tabbar-with-order">  
+					<span class="mui-icon mui-icon-compose"></span>  
+					<span class="mui-tab-label">订单</span>  
+				</a>  
+				<a class="mui-tab-item" href="#tabbar-with-my">  
+					<span class="mui-icon mui-icon-contact"></span>  
+					<span class="mui-tab-label">我的</span>  
+				</a>  
+			</nav>  
+			<div class="mui-content">  
+				<!--首页-->
+				<div id="tabbar" class="mui-control-content mui-active"> 
+					<div class="main-operate">
+						<div class="mui-row">
+							<div class="mui-col-xs-1">
+								<a href="城市选择.html"><span class="mui-icon mui-icon-location"></span></a>
+							</div>
+							<div class="mui-col-xs-10">
+								<input type="text" placeholder="送至：流星花园三区西门"/>
+							</div>
+							<div class="mui-col-xs-1">
+								<div class="mui-input-row mui-search">
+								    <a href="首页-搜索页.html"><span class="mui-icon mui-icon-search"></span></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--轮播-->
+					<div id="slider" class="mui-slider">
+						<div class="mui-slider-group mui-slider-loop">
+							<div class="mui-slider-item mui-slider-item-duplicate">
+								<a href="#"><img src="images/yuantiao.jpg"></a>
+							</div>
+							<div class="mui-slider-item">
+								<a href="#"><img src="images/lunbo1.png"></a>
+							</div>
+							<div class="mui-slider-item">
+								<a href="#"><img src="images/muwu.jpg"></a>
+							</div>
+							<div class="mui-slider-item">
+								<a href="#"><img src="images/cbd.jpg"></a>
+							</div>
+							<div class="mui-slider-item">
+								<a href="#"><img src="images/yuantiao.jpg"></a>
+							</div>
+							<div class="mui-slider-item mui-slider-item-duplicate">
+								<a href="#"><img src="images/lunbo1.png"></a>
+							</div>
+						</div>
+						<div class="mui-slider-indicator">
+							<div class="mui-indicator mui-active"></div>
+							<div class="mui-indicator"></div>
+							<div class="mui-indicator"></div>
+							<div class="mui-indicator"></div>
+						</div>
+					</div>
+					<!--八宫格-->
+					<div class="sort-list">
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-3">
+								<a href="养胃专区.html">
+									<img src="images/sort_1.png">
+									<div class="mui-media-body">养胃专区</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3">
+								<a href="#">
+									<img src="images/sort_2.png">
+									<div class="mui-media-body">减肥利器</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3">
+								<a href="#">
+									<img src="images/sort_3.png">
+									<div class="mui-media-body">清热下火</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3">
+								<a href="#">
+									<img src="images/sort_4.png">
+									<div class="mui-media-body">清肺解毒</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3">
+								<a href="#">
+									<img src="images/sort_5.png">
+									<div class="mui-media-body">养脑凝神</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3">
+								<a href="#">
+									<img src="images/sort_6.png">
+									<div class="mui-media-body">增肌食补</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3">
+								<a href="#">
+									<img src="images/sort_7.png">
+									<div class="mui-media-body">美容养颜</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3">
+								<a href="#">
+									<img src="images/sort_8.png">
+									<div class="mui-media-body">固肾补阳</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<!--猜你喜欢-->
+					<div class="cookie-title">猜你喜欢</div>
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell mui-media">
+							<a href="食物详情.html">
+								<img class="mui-media-object mui-pull-left" src="images/shuijiao.jpg">
+								<div class="mui-media-body">
+									<h4>水果拼盘2A系<span class="mui-pull-right text-orange">￥45</span></h4>
+									<div class="icons mui-pull-left rate-star">  
+				                        <i data-index="1" class="mui-icon mui-icon-star-filled"></i>  
+				                        <i data-index="2" class="mui-icon mui-icon-star-filled"></i>  
+				                        <i data-index="3" class="mui-icon mui-icon-star-filled"></i>  
+				                        <i data-index="4" class="mui-icon mui-icon-star"></i>  
+				                        <i data-index="5" class="mui-icon mui-icon-star"></i>  
+				                    </div>  
+									<p class='mui-ellipsis'>月销2314笔</p>
+									<p class='mui-ellipsis'><span>40分钟</span>|<span>2.5千米</span><span class="mui-icon mui-icon-plus mui-pull-right text-orange"></span></p>
+									<p class='mui-ellipsis'><span class="jian-sign">减</span>新品限免，八折优惠</p>
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+							<a href="#">
+								<img class="mui-media-object mui-pull-left" src="images/shuijiao.jpg">
+								<div class="mui-media-body">
+									<h4>水果拼盘2A系<span class="mui-pull-right text-orange">￥45</span></h4>
+									<div class="icons mui-pull-left rate-star">  
+				                        <i data-index="1" class="mui-icon mui-icon-star-filled"></i>  
+				                        <i data-index="2" class="mui-icon mui-icon-star-filled"></i>  
+				                        <i data-index="3" class="mui-icon mui-icon-star-filled"></i>  
+				                        <i data-index="4" class="mui-icon mui-icon-star-filled"></i>  
+				                        <i data-index="5" class="mui-icon mui-icon-star"></i>  
+				                    </div>  
+									<p class='mui-ellipsis'>月销2314笔</p>
+									<p class='mui-ellipsis'><span>40分钟</span>|<span>2.5千米</span><span class="mui-icon mui-icon-plus mui-pull-right text-orange"></span></p>
+									<p class='mui-ellipsis'><span class="jian-sign">减</span>新品限免，八折优惠</p>
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+							<a href="#">
+								<img class="mui-media-object mui-pull-left" src="images/shuijiao.jpg">
+								<div class="mui-media-body">
+									<h4>水果拼盘2A系<span class="mui-pull-right text-orange">￥45</span></h4>
+									<div class="icons mui-pull-left rate-star">  
+				                        <i data-index="1" class="mui-icon mui-icon-star-filled"></i>  
+				                        <i data-index="2" class="mui-icon mui-icon-star-filled"></i>  
+				                        <i data-index="3" class="mui-icon mui-icon-star-filled"></i>  
+				                        <i data-index="4" class="mui-icon mui-icon-star"></i>  
+				                        <i data-index="5" class="mui-icon mui-icon-star"></i>  
+				                    </div>  
+									<p class='mui-ellipsis'>月销2314笔</p>
+									<p class='mui-ellipsis'><span>40分钟</span>|<span>2.5千米</span><span class="mui-icon mui-icon-plus mui-pull-right text-orange"></span></p>
+									<p class='mui-ellipsis'><span class="jian-sign">减</span>新品限免，八折优惠</p>
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+							<a href="#">
+								<img class="mui-media-object mui-pull-left" src="images/shuijiao.jpg">
+								<div class="mui-media-body">
+									<h4>水果拼盘2A系<span class="mui-pull-right text-orange">￥45</span></h4>
+									<div class="icons mui-pull-left rate-star">  
+				                        <i data-index="1" class="mui-icon mui-icon-star-filled"></i>  
+				                        <i data-index="2" class="mui-icon mui-icon-star-filled"></i>  
+				                        <i data-index="3" class="mui-icon mui-icon-star-filled"></i>  
+				                        <i data-index="4" class="mui-icon mui-icon-star-filled"></i>  
+				                        <i data-index="5" class="mui-icon mui-icon-star"></i>  
+				                    </div>  
+									<p class='mui-ellipsis'>月销2314笔</p>
+									<p class='mui-ellipsis'><span>40分钟</span>|<span>2.5千米</span><span class="mui-icon mui-icon-plus mui-pull-right text-orange"></span></p>
+									<p class='mui-ellipsis'><span class="jian-sign">减</span>新品限免，八折优惠</p>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>  
+				<!--首页结束-->
+				<!--活动-->
+				<div id="tabbar-with-activity" class="mui-control-content"> 
+					<!--轮播-->
+					<div id="slider-huodong" class="mui-slider">
+						<div class="mui-slider-group mui-slider-loop">
+							<div class="mui-slider-item mui-slider-item-duplicate">
+								<a href="#"><img src="images/lunbo1.png"></a>
+							</div>
+							<div class="mui-slider-item">
+								<a href="#"><img src="images/cbd.jpg"></a>
+							</div>
+							<div class="mui-slider-item">
+								<a href="#"><img src="images/muwu.jpg"></a>
+							</div>
+							<div class="mui-slider-item">
+								<a href="#"><img src="images/cbd.jpg"></a>
+							</div>
+							<div class="mui-slider-item">
+								<a href="#"><img src="images/yuantiao.jpg"></a>
+							</div>
+							<div class="mui-slider-item mui-slider-item-duplicate">
+								<a href="#"><img src="images/lunbo1.png"></a>
+							</div>
+						</div>
+						<div class="mui-slider-indicator">
+							<div class="mui-indicator mui-active"></div>
+							<div class="mui-indicator"></div>
+							<div class="mui-indicator"></div>
+							<div class="mui-indicator"></div>
+						</div>
+					</div>
+					<div class="title">我的订阅</div>
+					<div class="activity-list">
+						<ul class="mui-table-view mui-grid-view">
+							<li class="mui-table-view-cell mui-media mui-col-xs-6">
+								<a href="#">
+									<img class="mui-media-object" src="images/lunbo1.png">
+									<div class="mui-media-body">卡路里追踪</div>
+									<span class="activity-num">112人参与</span>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-6">
+								<a href="#">
+									<img class="mui-media-object" src="images/lunbo1.png">
+									<div class="mui-media-body">增肌专场</div>
+									<span class="activity-num">112人参与</span>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-6">
+								<a href="#">
+									<img class="mui-media-object" src="images/lunbo1.png">
+									<div class="mui-media-body">养胃早知道</div>
+									<span class="activity-num">112人参与</span>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-6">
+								<a href="#">
+									<img class="mui-media-object" src="images/lunbo1.png">
+									<div class="mui-media-body">食补美颜</div>
+									<span class="activity-num">112人参与</span>
+								</a>
+							</li>
+						</ul>
+						<div class="title">猜你喜欢</div>  
+						<ul class="mui-table-view mui-grid-view">
+							<li class="mui-table-view-cell mui-media mui-col-xs-6">
+								<a href="#">
+									<img class="mui-media-object" src="images/lunbo1.png">
+									<div class="mui-media-body">卡路里追踪</div>
+									<span class="activity-num">112人参与</span>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-6">
+								<a href="#">
+									<img class="mui-media-object" src="images/lunbo1.png">
+									<div class="mui-media-body">增肌专场</div>
+									<span class="activity-num">112人参与</span>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-6">
+								<a href="#">
+									<img class="mui-media-object" src="images/lunbo1.png">
+									<div class="mui-media-body">养胃早知道</div>
+									<span class="activity-num">112人参与</span>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-6">
+								<a href="#">
+									<img class="mui-media-object" src="images/lunbo1.png">
+									<div class="mui-media-body">食补美颜</div>
+									<span class="activity-num">112人参与</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div> 
+				<!--活动结束-->
+				<!--订单-->
+				<div id="tabbar-with-order" class="mui-control-content">  
+					<ul class="mui-table-view">
+					  <li class="mui-table-view-cell">
+					  	<a href="交易中.html" class="mui-navigate-right">
+						    <div class="mui-row">
+							    <h4 class="mui-col-sm-6 mui-pull-left">京味斋</h4>
+							    <p class="mui-col-sm-6 mui-pull-right">交易中</p>
+						    </div>
+						    <div class="mui-row">
+							    <p class="mui-col-sm-6 mui-pull-left"">银耳莲子羹等三件物品</p>
+							    <p class="mui-col-sm-6 mui-pull-right">
+							    	共计<span class="mui-badge-danger mui-badge-inverted">89</span>元
+							    </p>
+						    </div>
+					      	<p>2017-04-05</p>
+					      	<div class="mui-row">
+						      	<button class="mui-btn mui-btn-outlined">催单</button>
+					      		<button class="mui-btn mui-btn-outlined">取消订单</button>
+					      	</div>
+					    </a>
+					  </li>
+					  <li class="mui-table-view-cell">
+					    <a href="交易完成.html" class="mui-navigate-right">
+						    <div class="mui-row">
+							    <h4 class="mui-col-sm-6 mui-pull-left">京味斋</h4>
+							    <p class="mui-col-sm-6 mui-pull-right">交易完成</p>
+						    </div>
+						    <div class="mui-row">
+							    <p class="mui-col-sm-6 mui-pull-left"">银耳莲子羹等三件物品</p>
+							    <p class="mui-col-sm-6 mui-pull-right">
+							    	共计<span class="mui-badge-danger mui-badge-inverted">89</span>元
+							    </p>
+						    </div>
+					      	<p>2017-04-05</p>
+					      	<div class="mui-row">
+						      	<button class="mui-btn mui-btn-outlined">再来一单</button>
+						      	<button class="mui-btn mui-btn-outlined">评价订单</button>
+						      	<button class="mui-btn mui-btn-outlined">删除订单</button>
+					      	</div>
+					    </a>
+					  </li>
+					  <li class="mui-table-view-cell">
+					  	<a href="交易中.html" class="mui-navigate-right">
+						    <div class="mui-row">
+							    <h4 class="mui-col-sm-6 mui-pull-left">京味斋</h4>
+							    <p class="mui-col-sm-6 mui-pull-right">交易中</p>
+						    </div>
+						    <div class="mui-row">
+							    <p class="mui-col-sm-6 mui-pull-left"">银耳莲子羹等三件物品</p>
+							    <p class="mui-col-sm-6 mui-pull-right">
+							    	共计<span class="mui-badge-danger mui-badge-inverted">89</span>元
+							    </p>
+						    </div>
+					      	<p>2017-04-05</p>
+					      	<div class="mui-row">
+						      	<button class="mui-btn mui-btn-outlined">删除订单</button>
+					      		<button class="mui-btn mui-btn-outlined">再来一单</button>
+					      	</div>
+					    </a>
+					  </li>
+					</ul>
+				</div>  
+				<!--订单结束-->
+				<!--我的-->
+				<div id="tabbar-with-my" class="mui-control-content">  
+					<div class="personal-header">
+						<span class="personal-icon"><img src="images/personal-icon.jpg"/></span>
+						<span class="personal-title">张海伦</span>
+					</div> 
+					<ul class="mui-table-view" style="margin-top: 25px;">  
+						<li class="mui-table-view-cell">  
+							<a href="我的收货地址.html" class="mui-navigate-right">  
+								我的收货地址 
+							</a>  
+						</li>  
+					</ul>  
+					<ul class="mui-table-view">  
+						<li class="mui-table-view-cell">  
+							<a href="我的收藏.html" class="mui-navigate-right">  
+								我的收藏  
+							</a>  
+						</li>  
+						<li class="mui-table-view-cell">  
+							<a href="我的优惠券.html" class="mui-navigate-right">  
+								我的优惠  
+							</a>  
+						</li>  
+						<li class="mui-table-view-cell">  
+							<a href="最近浏览.html" class="mui-navigate-right">  
+								最近浏览
+							</a>  
+						</li>  
+					</ul>  
+					<ul class="mui-table-view" style="margin-top: 25px;">  
+						<li class="mui-table-view-cell">  
+							<a class="mui-navigate-right">  
+								我的健康之路  
+							</a>  
+						</li>  
+					</ul>  
+					<ul class="mui-table-view" style="margin-top: 25px;">  
+						<li class="mui-table-view-cell">  
+							<a href="联系客服.html" class="mui-navigate-right">  
+								联系客服  
+							</a>  
+						</li> 
+						<li class="mui-table-view-cell">  
+							<a href="关于我们.html" class="mui-navigate-right">  
+								关于吃道  
+							</a>  
+						</li>  
+					</ul>  
+					<ul class="mui-table-view" style="margin-top: 25px;">  
+						<li class="mui-table-view-cell">  
+							<a style="text-align: center;color: #FF3B30;">  
+								退出登录  
+							</a>  
+						</li>  
+					</ul>  
+				</div>  
+				<!--我的结束-->
+			</div>  
+		</div>
+	</body>  
+	<script src="js/mui.min.js"></script>  
+	<script>  
+	mui.init({  
+		swipeBack:true //启用右滑关闭功能  
+	});  
+	var slider = mui("#slider");
+	slider.slider({
+		interval: 2000
+	});
+	mui('.icons').on('tap','i',function(){  
+        var index = parseInt(this.getAttribute("data-index"));//获取当前元素的索引值  
+        var parent = this.parentNode;//获取当前元素的父节点  
+        var children = parent.children;//获取父节点下所有子元素  
+        if(this.classList.contains("mui-icon-star")){//判断当前节点列表中是否含有.mui-icon-star元素  
+            for(var i=0;i<index;i++){//亮星  
+                    children[i].classList.remove('mui-icon-star');  
+                    children[i].classList.add('mui-icon-star-filled');  
+            }  
+        }else{//重置已经亮星的元素  
+            for (var i = index; i < 5; i++) {  
+                children[i].classList.add('mui-icon-star')  
+                children[i].classList.remove('mui-icon-star-filled')  
+            }  
+        }  
+        <!--document.getElementById("info").innerHTML = parent.previousElementSibling.innerText + "："+index+"星好评";  -->
+      })  
+	</script>  
+</html>  

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.shidao.web.commons.IDGenerator;
 import com.shidao.web.dao.UserAddressMapper;
 import com.shidao.web.dao.UserMapper;
 import com.shidao.web.model.User;
@@ -31,7 +32,8 @@ public class UserService {
 	 * @param user
 	 */
 	public void addUser(User user) {
-		Long id=System.currentTimeMillis();
+		Long id=IDGenerator.getid();
+		System.out.println("ssssssss");
 		user.setuId(id);
 		userMapper.insert(user);
 	}

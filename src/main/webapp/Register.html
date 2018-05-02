@@ -8,6 +8,8 @@
 		<link href="css/mui.min.css" rel="stylesheet" />
 		<link href="css/style.css" rel="stylesheet" />
 		<link href="css/theme.css" rel="stylesheet" />
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="js/zdialog.js"></script>
 		<style>
 			.area {
 				margin: 20px auto 0px auto;
@@ -114,6 +116,28 @@
 					});
 				});
 			}(mui, document));
+			$('#reg').click(function(e){
+				var loginname=$('#account').val();
+				var password=$('#password').val();
+				var email=$('#email').val();
+				$.ajax({
+			    	url:'user/registeUser',
+			        type:"post",
+			        // Form锟斤拷锟斤拷
+			        data: {
+			        	uLoginName:loginname,
+			    		uPassword:password,
+			    		uEmail:email
+			        },
+			        success:function(data){
+			        	 if(data.result=="success"){
+				        		window.location.href="Login.html"; 
+				        	}
+			        }
+			    });
+			   
+			                    
+			});
 		</script>
 	</body>
 

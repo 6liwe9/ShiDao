@@ -32,6 +32,7 @@ public class UserController{
     public Result registerUser(@RequestBody UserVO userVo) throws IllegalAccessException, InvocationTargetException  {
     	User user=new User();
     	BeanUtils.copyProperties(user, userVo);
+    	System.out.println(user.toString());
 		service.addUser(user);
     	return Result.buildSuccessReslut(null);  
     }
@@ -46,6 +47,7 @@ public class UserController{
 	public Result logIn(UserVO userVo,HttpServletRequest request) throws IllegalAccessException, InvocationTargetException  {
     	User user=new User();
     	BeanUtils.copyProperties(user, userVo);
+    	System.out.println(user.getuLoginName());
     	long id=service.loginUser(user);
     	if(id==-1l){
     		return Result.buildFailReslut("用户名或密码错误");

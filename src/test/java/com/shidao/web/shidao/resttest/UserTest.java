@@ -13,7 +13,7 @@ public class UserTest {
 
 	@Test
 	public void testLogin() {
-		String url="http://localhost:8080/user/login";
+		String url="http://localhost:8888/user/login";
 		Map<String,String> params=new HashMap<String,String>();
 		params.put("uLoginName", "13032286690");
 		params.put("uPassword", "13222");
@@ -21,7 +21,7 @@ public class UserTest {
 	}
 	@Test
 	public void testAddUser() {
-		String url="http://localhost:8080/user/registeUser";
+		String url="http://localhost:8888/user/registeUser";
 		UserVO user=new UserVO();
 		user.setuAge(12);
 		user.setuLoginName("13032286690");

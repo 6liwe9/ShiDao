@@ -12,18 +12,18 @@ public class RequestInterceptor implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		HttpSession session =request.getSession();   
-        UserToken user =(UserToken) session.getAttribute("userToken");
-        String url =request.getRequestURL().toString();  
-        for(String s:allowUrls) {
-        	if(url.contains(s))
-        		return true;
-        }
-        if(user ==null)  
-        {  
-        	response.sendRedirect(request.getContextPath()+"/Login.html");  
-        	System.out.println("redeict");
-        }
+//		HttpSession session =request.getSession();   
+//        UserToken user =(UserToken) session.getAttribute("userToken");
+//        String url =request.getRequestURL().toString();  
+//        for(String s:allowUrls) {
+//        	if(url.contains(s))
+//        		return true;
+//        }
+//        if(user ==null)  
+//        {  
+//        	response.sendRedirect(request.getContextPath()+"/Login.html");  
+//        	System.out.println("redeict");
+//        }
         return true;  
 	}
 

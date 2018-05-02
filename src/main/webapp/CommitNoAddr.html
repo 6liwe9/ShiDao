@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>确认订单</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/theme.css">
+		<script src="js/mui.min.js"></script>
+	</head>
+	<body>
+		<div class="qrdd-wrapper">
+			<header class="mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title">确认订单</h1>
+			</header>
+			<div class="mui-content content-with-footer">
+				<label class="mui-col-xs-3">配送至</label>
+				<div class="mui-row mui-text-center row-margin-bottom">
+					<a href="我的收货地址.html" class="mui-btn mui-icon mui-icon-plus">添加收货地址</a>
+				</div>
+				<div class="mui-row row-margin-bottom">
+					<label class="mui-col-xs-3">送达时间</label>
+					<div class="mui-col-xs-6">
+						<select>
+							<option value="1">尽快送达</option>
+							<option value="1">7：00-8：00</option>
+							<option value="1">8：00-9：00</option>
+							<option value="1">9：00-10：00</option>
+						</select>
+					</div>
+				</div>
+				<div class="mui-row">
+					<label class="mui-col-xs-3">红包优惠</label>
+					<a href="我的优惠券.html">可优惠5元</a>
+				</div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-media">
+						<a href="食物详情.html">
+							<h4>养胃专区</h4>
+							<img class="mui-media-object mui-pull-left" src="images/shuijiao.jpg">
+							<div class="mui-media-body">
+								<h4>大蒜猪肚汤</h4>
+								<div class="mui-row">
+									<div class="mui-col-xs-4">*2</div>
+									<div class="mui-col-xs-4">￥12</div>
+									<div class="mui-col-xs-4 mui-text-right">原价：45</div>
+								</div>
+								<div class="mui-row">
+									<div class="mui-col-xs-6">食坊：蒸煮坊</div>
+									<div class="mui-col-xs-6 mui-text-right">原价：45</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="#">
+							<h4>减肥专区</h4>
+							<img class="mui-media-object mui-pull-left" src="images/shuijiao.jpg">
+							<div class="mui-media-body">
+								<h4>大蒜猪肚汤</h4>
+								<div class="mui-row">
+									<div class="mui-col-xs-4">*2</div>
+									<div class="mui-col-xs-4">￥12</div>
+									<div class="mui-col-xs-4 mui-text-right">原价：45</div>
+								</div>
+								<div class="mui-row">
+									<div class="mui-col-xs-6">食坊：蒸煮坊</div>
+									<div class="mui-col-xs-6 mui-text-right">原价：45</div>
+								</div>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="mui-bar mui-bar-tab">
+				<p id="defaultTab" class="mui-tab-item" href="#" open-type="common">
+					<span class="mui-tab-label">合计70</span>
+				</p>
+				<a id="defaultTab" class="mui-tab-item" href="#" open-type="common">
+					<button id='login' class="mui-btn-default mui-btn-orange">支付</button>
+				</a>
+			</div>
+		</div>
+	</body>
+</html>

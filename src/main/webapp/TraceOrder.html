@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/theme.css">
+		<style>
+		    .ddgz-wrapper ul{
+		    	padding: 0px 40px;
+		    }
+			.ddgz-wrapper ul li{
+				list-style: none;
+				height: 70px;
+				border-left: 1px solid #dbdbdb;
+				padding-left: 25px;
+				position: relative;
+			}
+			.ddgz-wrapper ul li:last-child{
+				border: none;
+			}
+			.ddgz-wrapper ul li:before{
+				content: "";
+				display: block;
+				position: absolute;
+				left: -3px;
+    			top: 5px;
+				height: 5px;
+				width: 5px;
+				background: #777777;
+				border-radius: 50%;
+			}
+			.ddgz-wrapper ul li a{
+				color: #777;
+				font-weight: bold;
+			}
+			.ddgz-wrapper span.mui-pull-right{
+				font-size: 14px;
+				color: #999
+			}
+			.ddgz-wrapper ul li.active a{
+				color: #4081c5;
+			}
+			.ddgz-wrapper ul li.active:before{
+				background: #4081c5;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="ddgz-wrapper">
+			<header class="mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title">订单跟踪</h1>
+			</header>
+			<div class="mui-content">
+				<ul>
+					<li class="active">
+						<a href="#">订单已完成</a><span class="mui-pull-right">2018-03-2</span>
+						<p>感谢您对有道的信任，期待再次光临</p>
+					</li>
+					<li><a href="#">骑手已取货</a><span class="mui-pull-right">2018-03-2</span></li>
+					<li><a href="#">骑手已到店</a><span class="mui-pull-right">2018-03-2</span></li>
+					<li><a href="#">骑手已接单</a><span class="mui-pull-right">2018-03-2</span></li>
+					<li><a href="#">商家已接单</a><span class="mui-pull-right">2018-03-2</span></li>
+					<li><a href="#">订单已支付</a><span class="mui-pull-right">2018-03-2</span></li>
+					<li><a href="#">订单提交成功</a><span class="mui-pull-right">2018-03-2</span></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

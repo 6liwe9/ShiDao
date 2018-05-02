@@ -5,27 +5,30 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+import javax.annotation.Resource;
+
 import org.apache.commons.beanutils.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.shidao.web.dao.UserMapper;
-import com.shidao.web.model.User;
-import com.shidao.web.model.UserExample;
-import com.shidao.web.model.UserExample.Criteria;
+import com.shidao.web.dao.DictTypeMapper;
+import com.shidao.web.model.DictType;
+
+/*
+ * 用户管理
+ */
 
 @RestController
-public class TestController {
+@RequestMapping("/eva")
+public class EvaController {
 	@Autowired
-	UserMapper um;
-    @GetMapping("/helloworld")
+	DictTypeMapper dict;
+ 
     public Map helloworld() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-    	UserExample example=new UserExample();
-    	Criteria criteria = example.createCriteria();
-		List<User> ulist=um.selectByExample(example);
-		User user=ulist.get(0);
-		Map map=BeanUtils.describe(user);
-        return map;
+    	DictType dt=dict.selectByPrimaryKey(1);
+    	return BeanUtils.describe(dt);  
     }
 }

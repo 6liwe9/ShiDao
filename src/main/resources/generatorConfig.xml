@@ -4,29 +4,50 @@
 <generatorConfiguration>
 	<classPathEntry location="D:\mysql-connector-java-5.1.45.jar" />
 	<context id="context1">
-		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost/test" userId="root" password="root">
-	</jdbcConnection>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://114.116.9.92/eat_phil_debug" userId="mysql"
+			password="123456">
+		</jdbcConnection>
 		<javaTypeResolver>
-			<property name="forceBigDecimals" value="false" />
+			<property name="forceBigDecimals" value="true" />
 		</javaTypeResolver>
 
 		<!-- 生成model类 -->
 		<javaModelGenerator targetPackage="com.shidao.web.model"
-			targetProject="F:\User\shidao\src\main\java\">
+			targetProject="D:\ShiDao\src\main\java\">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
 
 		<!-- 生成mapper xml文件 -->
 		<sqlMapGenerator targetPackage="mybatis.mapper"
-			targetProject="F:\User\shidao\src\main\resources">
+			targetProject="D:\ShiDao\src\main\resources">
 			<property name="enableSubPackages" value="true" />
 		</sqlMapGenerator>
 		<javaClientGenerator type="XMLMAPPER"
-			targetPackage="com.shidao.web.dao" targetProject="F:\User\shidao\src\main\java\">
+			targetPackage="com.shidao.web.dao" targetProject="D:\ShiDao\src\main\java\">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 
-		<table tableName="testUser" domainObjectName="User"></table>
+		<table tableName="t_dict_type" domainObjectName="DictType"></table>
+		<table tableName="t_dict_item" domainObjectName="DictItem"></table>
+		<table tableName="t_user" domainObjectName="User"></table>
+		<table tableName="t_restaurant" domainObjectName="Restaurant"></table>
+		<table tableName="t_food" domainObjectName="Food"></table>
+		<table tableName="t_order" domainObjectName="Order"></table>
+		<table tableName="t_order_detil" domainObjectName="OrderDetil"></table>
+		<table tableName="t_expor" domainObjectName="Expor"></table>
+		<table tableName="t_order_dispatch" domainObjectName="OrderDispatch"></table>
+		<table tableName="t_res_eva" domainObjectName="ResEva"></table>
+		<table tableName="t_food_eva" domainObjectName="FoodEva"></table>
+		<table tableName="t_expor_eva" domainObjectName="ExporEva"></table>
+		<table tableName="t_coupon" domainObjectName="Coupon"></table>
+		<table tableName="t_user_coupon" domainObjectName="UserCoupon"></table>
+		<table tableName="t_back_user" domainObjectName="BackUser"></table>
+		<table tableName="t_res_user" domainObjectName="ResUser"></table>
+		<table tableName="t_exp_user" domainObjectName="ExpUser"></table>
+		<table tableName="t_res_user_rel" domainObjectName="ResUserRel"></table>
+		<table tableName="t_exp_user_rel" domainObjectName="ExpUserRel"></table>
+		<table tableName="t_user_address" domainObjectName="UserAddress"></table>
 	</context>
 </generatorConfiguration>  

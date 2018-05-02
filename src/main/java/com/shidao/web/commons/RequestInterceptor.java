@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 public class RequestInterceptor implements HandlerInterceptor {
 
-	String[] allowUrls= {"user","Login","Register","Forget"};
+	String[] allowUrls= {"/user","Login","Register","Forget","/js","/image","/images","/fonts","/css","/libs"};
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {

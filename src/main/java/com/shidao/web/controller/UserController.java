@@ -25,47 +25,53 @@ import com.shidao.web.vo.UserVO;
 
 @RestController
 @RequestMapping("/user")
-public class UserController{
+public class UserController {
 	@Autowired
 	UserService service;
-	@RequestMapping(value="/registeUser",method= RequestMethod.POST)
-    public Result registerUser(@RequestBody UserVO userVo) throws IllegalAccessException, InvocationTargetException  {
-    	User user=new User();
-    	BeanUtils.copyProperties(user, userVo);
-    	System.out.println(user.toString());
+
+	@RequestMapping(value = "/registeUser", method = RequestMethod.POST)
+	
+	public Result registerUser(UserVO userVo) throws IllegalAccessException, InvocationTargetException {
+		User user = new User();
+		BeanUtils.copyProperties(user, userVo);
+		System.out.println(user.toString());
 		service.addUser(user);
-    	return Result.buildSuccessReslut(null);  
-    }
-	@RequestMapping(value="/updateUser",method= RequestMethod.POST)
-	public Result updateUser(@RequestBody UserVO userVo) throws IllegalAccessException, InvocationTargetException  {
-    	User user=new User();
-    	BeanUtils.copyProperties(user, userVo);
+		return Result.buildSuccessReslut(null);
+	}
+
+	@RequestMapping(value = "/updateUser", method = RequestMethod.POST)
+	public Result updateUser(UserVO userVo) throws IllegalAccessException, InvocationTargetException {
+		User user = new User();
+		BeanUtils.copyProperties(user, userVo);
 		service.updateUserById(user);
-    	return Result.buildSuccessReslut(null);  
-    }
-	@RequestMapping(value="/login",method= RequestMethod.POST)
-	public Result logIn(UserVO userVo,HttpServletRequest request) throws IllegalAccessException, InvocationTargetException  {
-    	User user=new User();
-    	BeanUtils.copyProperties(user, userVo);
-    	System.out.println(user.getuLoginName());
-    	long id=service.loginUser(user);
-    	if(id==-1l){
-    		return Result.buildFailReslut("用户名或密码错误");
-    	}
-    	HttpSession session=request.getSession();
-    	UserToken userToken=new UserToken();
-    	userToken.setUserId(id);
-    	userToken.setUserName(userVo.getuName());
+		return Result.buildSuccessReslut(null);
+	}
+
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public Result logIn(UserVO userVo, HttpServletRequest request)
+			throws IllegalAccessException, InvocationTargetException {
+		User user = new User();
+		BeanUtils.copyProperties(user, userVo);
+		System.out.println(user.getuLoginName());
+		long id = service.loginUser(user);
+		if (id == -1l) {
+			return Result.buildFailReslut("用户名或密码错误");
+		}
+		HttpSession session = request.getSession();
+		UserToken userToken = new UserToken();
+		userToken.setUserId(id);
+		userToken.setUserName(userVo.getuName());
 		session.setAttribute("userToken", userToken);
-    	return Result.buildSuccessReslut(null);  
-    }
-	@RequestMapping(value="/updateAddress",method= RequestMethod.GET)
-	public Result updateAddress(UserAddressVO addressVo) throws IllegalAccessException, InvocationTargetException  {
-    	UserAddress address=new UserAddress();
-    	BeanUtils.copyProperties(address, addressVo);
-    	service.updateAddress(address);
-    	
-    		return Result.buildSuccessReslut(null);
-    
-    }
+		return Result.buildSuccessReslut(null);
+	}
+
+	@RequestMapping(value = "/updateAddress", method = RequestMethod.GET)
+	public Result updateAddress(UserAddressVO addressVo) throws IllegalAccessException, InvocationTargetException {
+		UserAddress address = new UserAddress();
+		BeanUtils.copyProperties(address, addressVo);
+		service.updateAddress(address);
+
+		return Result.buildSuccessReslut(null);
+
+	}
 }

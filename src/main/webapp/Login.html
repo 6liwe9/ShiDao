@@ -7,6 +7,9 @@
 		<link href="css/mui.min.css" rel="stylesheet" />
 		<link href="css/style.css" rel="stylesheet" />
 		<link href="css/theme.css" rel="stylesheet" />
+		<link type="text/css" rel="stylesheet" href="css/zdialog.css" />
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="js/zdialog.js"></script>
 		<style>
 			
 		</style>
@@ -49,7 +52,6 @@
 		<script src="js/mui.min.js"></script>
 		<script src="js/mui.enterfocus.js"></script>
 		<script src="js/app.js"></script>
-		<script src="js/jquery.min.js"></script>
 		<script>
 		
 			(function($, doc) {
@@ -242,7 +244,13 @@
 			    		uPassword:password
 			        },
 			        success:function(data){
-			            alert(data);
+			        	if(data.result=="fail"){
+			        		$.DialogByZ.Autofade({Content: "用户或密码错误！！！"})
+			        		$('#account').val(null);
+			        		$('#password').val(null);
+			        	}else if(data.result=="success"){
+			        		window.location.href="Index.html"; 
+			        	}
 			        }
 			    });
 			                    

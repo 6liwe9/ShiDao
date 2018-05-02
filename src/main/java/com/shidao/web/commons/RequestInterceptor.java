@@ -2,18 +2,29 @@ package com.shidao.web.commons;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import javax.servlet.http.HttpSession;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 public class RequestInterceptor implements HandlerInterceptor {
+
+	String[] allowUrls= {"user","Login","Register","Forget"};
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		System.out.println("拦截器preHandle()在请求处理之前进行调用(Controller方法调用之前)");
-
-		// 只有返回true才会继续向下执行，返回false取消当前请求 可进行权限检查
-		return true;
+		HttpSession session =request.getSession();   
+        UserToken user =(UserToken) session.getAttribute("userToken");
+        String url =request.getRequestURL().toString();  
+        for(String s:allowUrls) {
+        	if(url.contains(s))
+        		return true;
+        }
+        if(user ==null)  
+        {  
+        	response.sendRedirect(request.getContextPath()+"/Login.html");  
+        	System.out.println("redeict");
+        }
+        return true;  
 	}
 
 	@Override

@@ -31,5 +31,5 @@ public class RestaurantController {
     public Map helloworld() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
     	DictType dt=dict.selectByPrimaryKey(1);
     	return BeanUtils.describe(dt);  
-    }
+	}
 }

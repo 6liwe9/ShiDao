@@ -8,6 +8,7 @@
 		<link href="css/mui.min.css" rel="stylesheet" />
 		<link href="css/style.css" rel="stylesheet" />
 		<link href="css/theme.css" rel="stylesheet" />
+		<link type="text/css" rel="stylesheet" href="css/zdialog.css" />
 		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 		<script type="text/javascript" src="js/zdialog.js"></script>
 		<style>
@@ -130,7 +131,11 @@
 			    		uEmail:email
 			        },
 			        success:function(data){
-			        	 if(data.result=="success"){
+			        	if(data.result=="fail"){
+			        		$.DialogByZ.Autofade({Content: "参数不能为空！！！"})
+			        		$('#account').val(null);
+			        		$('#password').val(null);
+			        	}else if(data.result=="success"){
 				        		window.location.href="Login.html"; 
 				        	}
 			        }

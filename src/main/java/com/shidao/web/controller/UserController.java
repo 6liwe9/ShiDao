@@ -35,6 +35,12 @@ public class UserController {
 		User user = new User();
 		BeanUtils.copyProperties(user, userVo);
 		System.out.println(user.toString());
+		if("".equals(user.getuLoginName())){
+			return Result.buildFailReslut(null);
+		}
+		if("".equals(user.getuPassword())){
+			return Result.buildFailReslut(null);
+		}
 		service.addUser(user);
 		return Result.buildSuccessReslut(null);
 	}

@@ -9,6 +9,7 @@
 		<!--标准mui.css-->
 		<link rel="stylesheet" href="css/mui.min.css">
 		<link rel="stylesheet" href="css/theme.css">
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 		<script src="js/mui.min.js"></script>
 		<style>
 			.wdshdd-wrapper .mui-row{
@@ -24,44 +25,70 @@
 				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 				<h1 class="mui-title">我的收货地址</h1>
 			</header>
-			<div class="mui-content">
-				<div class="mui-row">
-					<h4>张海林18757485444</h4>
-					<p>北京市昌平区北方艺术家培训中心</p>
-					<a type="button" class="mui-btn mui-btn-primary" href="编辑地址.html">
+			
+			<div id='addressAll' class="mui-content">
+			<div class="mui-row" id='new' ><h4><a href='AddressAdd.html'>新增</a></h4></div>
+				<div class="mui-row" id='address' style='display:none' >
+					<h4 id='name'>张海林18757485444</h4>
+					<p id='addr'>北京市昌平区北方艺术家培训中心</p>
+					<a type="button" id='update' class="mui-btn mui-btn-primary" >
 		            	<span class="mui-icon mui-icon-compose"></span>
 		            	编辑
 		        	</a>
-		        	<button type="button" class="mui-btn mui-btn-danger">
-		        		<span class="mui-icon mui-icon-trash"></span>
-		            	删除
-		        	</button>
-				</div>
-				<div class="mui-row">
-					<h4>张海林18757485444</h4>
-					<p>北京市昌平区北方艺术家培训中心</p>
-					<button type="button" class="mui-btn mui-btn-primary">
-		            	<span class="mui-icon mui-icon-compose"></span>
-		            	编辑
-		        	</button>
-		        	<button type="button" class="mui-btn mui-btn-danger">
-		        		<span class="mui-icon mui-icon-trash"></span>
-		            	删除
-		        	</button>
-				</div>
-				<div class="mui-row">
-					<h4>张海林18757485444</h4>
-					<p>北京市昌平区北方艺术家培训中心</p>
-					<button type="button" class="mui-btn mui-btn-primary">
-		            	<span class="mui-icon mui-icon-compose"></span>
-		            	编辑
-		        	</button>
-		        	<button type="button" class="mui-btn mui-btn-danger">
+		        	<button type="button" id ='del' class="mui-btn mui-btn-danger">
 		        		<span class="mui-icon mui-icon-trash"></span>
 		            	删除
 		        	</button>
 				</div>
 			</div>
 		</div>
+		<script>
+		
+		   $(function() {// 初始化内容
+
+		        $.ajax({
+			    	url:'address/getAddress',
+			        type:"get",
+			        // Form锟斤拷锟斤拷
+			        data: { 
+			        },
+			        success:function(data){
+			        	if(data.result=="success"){
+			        		var addresslist=data.data;
+	
+			        			for(var i=0;i<addresslist.length;i++){
+			        			var address=addresslist[i];
+			        			var $add=$('#address').clone();
+			        			$add.toggle();
+			        			$add.find('#name').text(address.uName+address.uPhone);
+			        			$add.find('#addr').text(address.uaDetail);
+			        			$add.find('#update').attr('href','AddressAdd.html?uid='+address.id);
+			        			$add.find('#del').click({msg: address.id}, function(event) { 		        				
+			        				$pos=$(this);
+			        				 $.ajax({
+			        				    	url:'address/delAddress?id='+event.data.msg,
+			        				        type:"get",
+			        				        // Form锟斤拷锟斤拷
+			        				        data: { 
+			        				        },
+			        				        success:function(data){
+			        				        	if(data.result=="success"&&data.data){
+			        				        		$pos.parent().remove();	
+			        				        	}
+			        				        }
+			        				 });
+			        					        				
+			        			}); 
+			        		
+			        			$('#addressAll').append($add);
+			        			}
+			        		
+			        	}
+			        	}
+			      
+			    });  
+		    });
+		   
+		</script>
 	</body>
 </html>

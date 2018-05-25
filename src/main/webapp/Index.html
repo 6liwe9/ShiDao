@@ -304,29 +304,29 @@
 				<!--我的-->
 				<div id="tabbar-with-my" class="mui-control-content">  
 					<div class="personal-header">
-						<span class="personal-icon"><img src="images/personal-icon.jpg"/></span>
-						<span class="personal-title">张海伦</span>
+						<span class="personal-icon"><img id='icon' src=""/></span>
+						<span  class="personal-title"><p id='name'></p></span>
 					</div> 
 					<ul class="mui-table-view" style="margin-top: 25px;">  
 						<li class="mui-table-view-cell">  
-							<a href="我的收货地址.html" class="mui-navigate-right">  
+							<a href="Address.html" class="mui-navigate-right">  
 								我的收货地址 
 							</a>  
 						</li>  
 					</ul>  
 					<ul class="mui-table-view">  
 						<li class="mui-table-view-cell">  
-							<a href="我的收藏.html" class="mui-navigate-right">  
+							<a href="Collection.html" class="mui-navigate-right">  
 								我的收藏  
 							</a>  
 						</li>  
 						<li class="mui-table-view-cell">  
-							<a href="我的优惠券.html" class="mui-navigate-right">  
+							<a href="Coupon.html" class="mui-navigate-right">  
 								我的优惠  
 							</a>  
 						</li>  
 						<li class="mui-table-view-cell">  
-							<a href="最近浏览.html" class="mui-navigate-right">  
+							<a href="LatestView.html" class="mui-navigate-right">  
 								最近浏览
 							</a>  
 						</li>  
@@ -340,12 +340,12 @@
 					</ul>  
 					<ul class="mui-table-view" style="margin-top: 25px;">  
 						<li class="mui-table-view-cell">  
-							<a href="联系客服.html" class="mui-navigate-right">  
+							<a href="ConnectService.html" class="mui-navigate-right">  
 								联系客服  
 							</a>  
 						</li> 
 						<li class="mui-table-view-cell">  
-							<a href="关于我们.html" class="mui-navigate-right">  
+							<a href="AboutUs.html" class="mui-navigate-right">  
 								关于吃道  
 							</a>  
 						</li>  
@@ -388,16 +388,24 @@
         }  
         <!--document.getElementById("info").innerHTML = parent.previousElementSibling.innerText + "："+index+"星好评";  -->
       })  
-      
-							
-							
-								
-									
-									
-				                 
-				                
-    $(function() {// 初始化内容
-    	 $.ajax({
+     $.setUser = function(){
+		$.ajax({
+	    	url:'user/getUser',
+	        type:"get",
+	        // Form锟斤拷锟斤拷
+	        data: { 
+	        },
+	        success:function(data){
+	        	if(data.result=="success"){
+	        		var user=data.data;
+	        		$('#icon').attr('src',user.uHeadportrait);
+	        		$('#name').text(user.uName);	
+	        	}
+	        }
+	    });
+        }   
+	   $.setFood = function(){
+			$.ajax({
 		    	url:'food/getRecommendFood',
 		        type:"get",
 		        // Form锟斤拷锟斤拷
@@ -405,46 +413,61 @@
 		        },
 		        success:function(data){
 		        	if(data.result=="success"){
-		        		var farr=data.data;
-		        		for(var i=0;i<farr.length;i++){
-		        			var innerHtml='<li class="mui-table-view-cell mui-media">';
-		        			innerHtml+='<a href="FoodDetail.html?fId='+farr[i].fId+'">';
-		        			innerHtml+='<img class="mui-media-object mui-pull-left" src="'+farr[i].fImg+'">';
-		        			innerHtml+='<div class="mui-media-body">';
-		        			innerHtml+='<h4>'+farr[i].fName+'<span class="mui-pull-right text-orange">￥'+farr[i].fPrice+'</span></h4>';
-		        			var rate=farr[i].fRate;
-		        			var j;
-		        			innerHtml+='<div class="icons mui-pull-left rate-star">'; 
-		        			var ratestr=''+rate;
-		        			if(ratestr.indexOf('.5')!=-1){
-		        				for(j=1;j<=rate;j++){
-		        					innerHtml+='<i data-index="'+j+'" class="mui-icon mui-icon-star-filled"></i>';  
-		        				}
-		        				innerHtml+='<i data-index="'+j+'" class="mui-icon mui-icon-starhalf"></i>';
-		        				j++;
-		        				for(;j<=5;j++){
-		        					innerHtml+='<i data-index="'+j+'" class="mui-icon mui-icon-star"></i>';  
-		        				}
-		        			
-		        			}
-		        			else{
-		        				for(j=1;j<=rate;j++){
-		        					innerHtml+='<i data-index="'+j+'" class="mui-icon mui-icon-star-filled"></i>';  
-		        				}
-		       
-		        				for(;j<=5;j++){
-		        					innerHtml+='<i data-index="'+j+'" class="mui-icon mui-icon-star"></i>';  
-		        				}
-		        			}
-		       				innerHtml+='    </div> <p class="mui-ellipsis">月销2314笔</p><p class="mui-ellipsis"><span>40分钟</span>|<span>2.5千米</span><span class="mui-icon mui-icon-plus mui-pull-right text-orange"></span></p>';
-							innerHtml+='<p class="mui-ellipsis"><span class="jian-sign">减</span>新品限免，八折优惠</p></div></a></li>'
-							var $li=$(innerHtml);
-			        		$('#flist').append($li);
-		        		}
-		        		
+		        		 $.ajax({
+		     		    	url:'food/getRecommendFood',
+		     		        type:"get",
+		     		        // Form锟斤拷锟斤拷
+		     		        data: { 
+		     		        },
+		     		        success:function(data){
+		     		        	if(data.result=="success"){
+		     		        		var farr=data.data;
+		     		        		for(var i=0;i<farr.length;i++){
+		     		        			var innerHtml='<li class="mui-table-view-cell mui-media">';
+		     		        			innerHtml+='<a href="FoodDetail.html?fId='+farr[i].fId+'">';
+		     		        			innerHtml+='<img class="mui-media-object mui-pull-left" src="'+farr[i].fImg+'">';
+		     		        			innerHtml+='<div class="mui-media-body">';
+		     		        			innerHtml+='<h4>'+farr[i].fName+'<span class="mui-pull-right text-orange">￥'+farr[i].fPrice+'</span></h4>';
+		     		        			var rate=farr[i].fRate;
+		     		        			var j;
+		     		        			innerHtml+='<div class="icons mui-pull-left rate-star">'; 
+		     		        			var ratestr=''+rate;
+		     		        			if(ratestr.indexOf('.5')!=-1){
+		     		        				for(j=1;j<=rate;j++){
+		     		        					innerHtml+='<i data-index="'+j+'" class="mui-icon mui-icon-star-filled"></i>';  
+		     		        				}
+		     		        				innerHtml+='<i data-index="'+j+'" class="mui-icon mui-icon-starhalf"></i>';
+		     		        				j++;
+		     		        				for(;j<=5;j++){
+		     		        					innerHtml+='<i data-index="'+j+'" class="mui-icon mui-icon-star"></i>';  
+		     		        				}
+		     		        			
+		     		        			}
+		     		        			else{
+		     		        				for(j=1;j<=rate;j++){
+		     		        					innerHtml+='<i data-index="'+j+'" class="mui-icon mui-icon-star-filled"></i>';  
+		     		        				}
+		     		       
+		     		        				for(;j<=5;j++){
+		     		        					innerHtml+='<i data-index="'+j+'" class="mui-icon mui-icon-star"></i>';  
+		     		        				}
+		     		        			}
+		     		       				innerHtml+='    </div> <p class="mui-ellipsis">月销2314笔</p><p class="mui-ellipsis"><span>40分钟</span>|<span>2.5千米</span><span class="mui-icon mui-icon-plus mui-pull-right text-orange"></span></p>';
+		     							innerHtml+='<p class="mui-ellipsis"><span class="jian-sign">减</span>新品限免，八折优惠</p></div></a></li>'
+		     							var $li=$(innerHtml);
+		     			        		$('#flist').append($li);
+		     		        		}
+		     		        		
+		     		        	}
+		     		        }
+		     		    });        		
 		        	}
 		        }
 		    });
+	        }   
+    $(function() {// 初始化内容
+    	 $.setFood();
+    	$.setUser();
     }); 
                     
 

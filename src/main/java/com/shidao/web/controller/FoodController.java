@@ -41,7 +41,7 @@ public class FoodController {
 
 	}
 	@RequestMapping(value = "/getFoodDetail", method = RequestMethod.GET)
-	public Result updateAddress(Long fid) throws IllegalAccessException, InvocationTargetException {
+	public Result getFoodDetail(Long fid) throws IllegalAccessException, InvocationTargetException {
 		Object ret=foodService.getFoodDetail(fid);
 		if(ret!=null) {
 			return Result.buildSuccessReslut(ret);

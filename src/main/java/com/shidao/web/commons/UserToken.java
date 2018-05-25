@@ -1,5 +1,8 @@
 package com.shidao.web.commons;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 public class UserToken {
 	String userName;
 	Long userId;
@@ -14,5 +17,10 @@ public class UserToken {
 	}
 	public void setUserId(Long userId) {
 		this.userId = userId;
+	}
+	public static UserToken getUserToker(HttpServletRequest request) {
+		HttpSession session =request.getSession();   
+        UserToken user =(UserToken) session.getAttribute("userToken");
+        return user;
 	}
 }

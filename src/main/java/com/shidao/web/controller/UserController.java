@@ -71,13 +71,11 @@ public class UserController {
 		return Result.buildSuccessReslut(null);
 	}
 
-	@RequestMapping(value = "/updateAddress", method = RequestMethod.GET)
-	public Result updateAddress(UserAddressVO addressVo) throws IllegalAccessException, InvocationTargetException {
-		UserAddress address = new UserAddress();
-		BeanUtils.copyProperties(address, addressVo);
-		service.updateAddress(address);
-
-		return Result.buildSuccessReslut(null);
+	
+	@RequestMapping(value = "/getUser", method = RequestMethod.GET)
+	public Result getUser(HttpServletRequest request) throws IllegalAccessException, InvocationTargetException {
+		Long userId=UserToken.getUserToker(request).getUserId();
+		return Result.buildSuccessReslut(service.getUserById(userId));
 
 	}
 }

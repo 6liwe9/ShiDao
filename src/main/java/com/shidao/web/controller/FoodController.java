@@ -12,10 +12,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.shidao.web.commons.Result;
 import com.shidao.web.dao.DictTypeMapper;
+import com.shidao.web.dao.FoodMapper;
 import com.shidao.web.model.DictType;
+import com.shidao.web.model.UserAddress;
+import com.shidao.web.service.FoodService;
+import com.shidao.web.vo.UserAddressVO;
 
 /*
  * 菜品管理
@@ -25,10 +31,22 @@ import com.shidao.web.model.DictType;
 @RequestMapping("/food")
 public class FoodController {
 	@Autowired
-	DictTypeMapper dict;
+	FoodService foodService;
  
-    public Map helloworld() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-    	DictType dt=dict.selectByPrimaryKey(1);
-    	return BeanUtils.describe(dt);  
-    }
+	@RequestMapping(value = "/getRecommendFood", method = RequestMethod.GET)
+	public Result getRecommendFood() throws IllegalAccessException, InvocationTargetException {
+
+		return Result.buildSuccessReslut(	
+				foodService.getRecommendFood());
+
+	}
+	@RequestMapping(value = "/getFoodDetail", method = RequestMethod.GET)
+	public Result updateAddress(Long fid) throws IllegalAccessException, InvocationTargetException {
+		Object ret=foodService.getFoodDetail(fid);
+		if(ret!=null) {
+			return Result.buildSuccessReslut(ret);
+		}else
+			return Result.buildFailReslut(null);
+
+	}
 }

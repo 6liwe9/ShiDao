@@ -46,37 +46,16 @@
 						<div class="mui-indicator"></div>
 					</div>
 				</div>
-				<ul class="mui-table-view">
-					<li class="mui-table-view-cell mui-media">
-						<a href="#">
-							<img class="mui-media-object mui-pull-left" src="images/shuijiao.jpg">
-							<div class="mui-media-body">
-								<h4>水果拼盘2A系<span class="mui-pull-right text-orange">￥45</span></h4>
-								<div class="icons mui-pull-left rate-star">  
-			                        <i data-index="1" class="mui-icon mui-icon-star-filled"></i>  
-			                        <i data-index="2" class="mui-icon mui-icon-star-filled"></i>  
-			                        <i data-index="3" class="mui-icon mui-icon-star-filled"></i>  
-			                        <i data-index="4" class="mui-icon mui-icon-star"></i>  
-			                        <i data-index="5" class="mui-icon mui-icon-star"></i>  
-			                    </div>  
-								<p class='mui-ellipsis'>月销2314笔</p>
-								<p class='mui-ellipsis'><span>40分钟</span>|<span>2.5千米</span><span class="mui-icon mui-icon-plus mui-pull-right text-orange"></span></p>
-								<p class='mui-ellipsis'><span class="jian-sign">减</span>新品限免，八折优惠</p>
-							</div>
-						</a>
-					</li>
+				<ul class="mui-table-view" id='foodlist'>
+					
 				</ul>
 				<div class="good-detail">
 					<div class="clearfix cookie-title">
 						<h4 class="mui-pull-left">商品详情</h4>
 						<button class="mui-btn-default mui-btn-orange mui-pull-right">进入店铺</button>
 					</div>
-					<div>
-						<p>南瓜：性温，味甘，入脾、胃经，能补中益气、消炎杀菌、止痛</p>
-						<p>食材：南瓜 200克、椰子粉 1袋</p>
-						<p>做法：1)南瓜去皮去籽切小块，入微波炉高火10分钟左右蒸熟冷却一会</p>
-						<p>2)椰子粉以1：5的比例用开水冲开成为椰汁后稍凉；</p>
-						<p>3)把蒸熟的南瓜和椰汁一起放入粉碎机打成细腻的糊状，倒入杯中，超强保温，随着时间的流逝二者可深入交互浸入，温润丰盈，尊贵享受。</p>
+					<div id='foodDec'>
+						
 					</div>
 				</div>
 				<div class="rate-detail">
@@ -183,11 +162,63 @@
 		</div>
 		<script src="js/jquery.min.js"></script>
 		<script>
-			$(function(){
-				$("#buyCar").click(function(){
-					$("#buyCarContent").toggle();
-				});
-			});
+		function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+            var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+            if (r != null) return unescape(r[2]); return null; //返回参数值
+        }
+		$(function() {// 初始化内容
+			var fid=getUrlParam('fId');
+		    	 $.ajax({
+				    	url:'food/getFoodDetail?fid='+fid,
+				        type:"get",
+				        // Form锟斤拷锟斤拷
+				        data: { 
+				        },
+				        success:function(data){
+				        	if(data.result=="success"){
+				        		var food=data.data;
+								$('#foodDec').html('<p>'+food.fDes+'</p>');
+				        			var innerHtml='<li class="mui-table-view-cell mui-media">';
+				        			innerHtml+='<a href="#">';
+				        			innerHtml+='<img class="mui-media-object mui-pull-left" src="'+food.fImg+'">';
+				        			innerHtml+='<div class="mui-media-body">';
+				        			innerHtml+='<h4>'+food.fName+'<span class="mui-pull-right text-orange">￥'+food.fPriceOut+'</span></h4>';
+				        			var rate=food.fAllrating;
+				        			var j;
+				        			innerHtml+='<div class="icons mui-pull-left rate-star">'; 
+				        			var ratestr=''+rate;
+				        			if(ratestr.indexOf('.5')!=-1){
+				        				for(j=1;j<=rate;j++){
+				        					innerHtml+='<i data-index="'+j+'" class="mui-icon mui-icon-star-filled"></i>';  
+				        				}
+				        				innerHtml+='<i data-index="'+j+'" class="mui-icon mui-icon-starhalf"></i>';
+				        				j++;
+				        				for(;j<=5;j++){
+				        					innerHtml+='<i data-index="'+j+'" class="mui-icon mui-icon-star"></i>';  
+				        				}
+				        			
+				        			}
+				        			else{
+				        				for(j=1;j<=rate;j++){
+				        					innerHtml+='<i data-index="'+j+'" class="mui-icon mui-icon-star-filled"></i>';  
+				        				}
+				       
+				        				for(;j<=5;j++){
+				        					innerHtml+='<i data-index="'+j+'" class="mui-icon mui-icon-star"></i>';  
+				        				}
+				        			}
+				       				innerHtml+='    </div> <p class="mui-ellipsis">月销2314笔</p><p class="mui-ellipsis"><span>40分钟</span>|<span>2.5千米</span><span class="mui-icon mui-icon-plus mui-pull-right text-orange"></span></p>';
+									innerHtml+='<p class="mui-ellipsis"><span class="jian-sign">减</span>新品限免，八折优惠</p></div></a></li>'
+									var $li=$(innerHtml);
+					        		$('#foodlist').append($li);
+				        		
+				        	
+				        		
+				        	}
+				        }}
+				   );
+		}); 
 		</script>
 	</body>
 </html>
